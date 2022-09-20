@@ -6,10 +6,13 @@ function Subscribe() {
   return (
     <section className="subscribe">
       <div className="subscribe-message">
-        <div><br /><br /><br />
-      <div className="subscribe-header">
-        <img src={Planetbase} alt="" />
-      </div>
+        <div>
+          <br />
+          <br />
+          <br />
+          <div className="subscribe-header">
+            <img src={Planetbase} alt="" />
+          </div>
           <h4>
             Moving your events online really opens up the esteem of supporting
             it
@@ -19,22 +22,23 @@ function Subscribe() {
           </p>
         </div>
         <div>
-          <div class="parent-wrapper">
-            <span class="close-btn glyphicon glyphicon-remove"></span>
-            <div class="subscribe-wrapper">
+          <div className="parent-wrapper">
+            <span className="close-btn glyphicon glyphicon-remove"></span>
+            <div className="subscribe-wrapper">
               <h4>SUBSCRIBE TO OUR NEWSLETTER</h4>
               <input
                 type="email"
                 name="email"
-                class="subscribe-input"
+                className="subscribe-input"
                 placeholder="Enter Your Email Address"
               />
-              <div class="submit-btn">SUBMIT</div>
+              <div className="submit-btn">SUBMIT</div>
             </div>
           </div>
 
           <h6 className="policy">
-            By subscribing to our news letter, you have agreed to our Terms of Service and Privacy Policy.
+            By subscribing to our news letter, you have agreed to our Terms of
+            Service and Privacy Policy.
           </h6>
         </div>
       </div>

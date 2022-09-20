@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import EventLayout from "../../layouts/events-layout";
 import { FcEditImage, FcFullTrash, FiSearch } from "react-icons/all";
 import "./style.css";
@@ -48,6 +48,7 @@ function EventProfile() {
   const navigate = useNavigate();
   const [events, setEvents] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(false);
+  const [error, setError] = useState(null);
 
   const url = "https://planetbase-api.onrender.com/api/events/organizer-events";
 
@@ -76,6 +77,7 @@ function EventProfile() {
       .catch((err) => {
         console.error(err);
         setIsLoading(false);
+        setError(err.message);
       });
   }, []);
 
@@ -106,6 +108,17 @@ function EventProfile() {
         </div>
       </div>
     );
+  } else if (error) {
+    return (
+      <div style={{ padding: "2rem" }}>
+        <h1>{error}</h1>
+        <p>
+          Something is temporarily wrong with your network connection.
+          <br /> Please make sure you are connected to the internet and then
+          reload your browser.
+        </p>
+      </div>
+    );
   } else {
     return (
       <EventLayout>
@@ -128,13 +141,15 @@ function EventProfile() {
         <div className="event-all">
           {events.length > 0 ? (
             events.map((event) => (
-              <EventCard
-                eventImage={event?.eventImage}
-                eventDate={event?.scheduledDate}
-                eventTitle={event?.eventTitle}
-                // eventDesc={event.eventDesc}
-                key={event?._id}
-              />
+              <div key={event._id}>
+                <EventCard
+                  eventImage={event.eventImage}
+                  eventDate={event.scheduledDate}
+                  eventTitle={event.eventTitle}
+                  // eventDesc={event.eventDesc}
+                  eventKey={event._id}
+                />
+              </div>
             ))
           ) : (
             <NoEvents />
@@ -147,15 +162,9 @@ function EventProfile() {
 
 export default EventProfile;
 
-export function EventCard({
-  eventImage,
-  key,
-  eventDate,
-  eventTitle,
-  eventDesc,
-}) {
+export function EventCard({ eventImage, eventKey, eventDate, eventTitle }) {
   return (
-    <div className="event-rows" key={key}>
+    <div className="event-rows" key={eventKey}>
       <img src={eventImage} alt="a picture of an event image" />
       <div>
         <h3>Events</h3>
@@ -176,17 +185,17 @@ export function EventCard({
           <p>Pending</p>
         </div>
       </div>
-      <div>
-        {/* <span>
+      {/* <div>
+        <span>
           <Link to="/confirm-event">
             <FcEditImage size={30} />
           </Link>
-        </span> */}
+        </span>
         <br />
-        {/* <span>
+        <span>
           <FcFullTrash size={30} />
-        </span> */}
-      </div>
+        </span>
+      </div> */}
     </div>
   );
 }

@@ -18,6 +18,7 @@ function SponsorCard() {
   const [scheduledDate, setScheduledDate] = useState("");
   const [eventLocation, setEventLocation] = useState("");
   const [sponsorshipPackage, setSponsorshipPackage] = useState("");
+  const [error, setError] = useState(null);
   const url = "https://planetbase-api.onrender.com/api/events/all-events";
   useEffect(() => {
     setIsLoading(true);
@@ -28,9 +29,22 @@ function SponsorCard() {
       })
       .catch((err) => {
         console.error(err);
+        setError(err.message);
       });
   }, []);
 
+  if (error) {
+    return (
+      <div>
+        <h1>{error}</h1>
+        <p>
+          Something is temporarily wrong with your network connection.
+          <br /> Please make sure you are connected to the internet and then
+          reload your browser.
+        </p>
+      </div>
+    );
+  }
   return (
     <div>
       {isOpen && (
@@ -66,7 +80,7 @@ function SponsorCard() {
         <div className="sponsorships-layout">
           {events.map((listEvent, index) => (
             <div
-              key={listEvent._id}
+              key={listEvent?._id}
               className="sp-card"
               onClick={() => {
                 toggleModal();

@@ -44,11 +44,11 @@ function Sponsor({ cards, index }) {
         {events.length > 0 ? (
           <div>
             {events.map((events, index) => (
-              <SponsorCard key={events._id} {...events} />
+              <SponsorCard key={events?._id} {...events} />
             ))}
           </div>
         ) : (
-          <SponsorCard/>
+          <SponsorCard />
         )}
 
         {/* <div className="sponsor-btn-continue">
