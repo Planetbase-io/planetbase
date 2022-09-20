@@ -111,11 +111,6 @@ function SponsorCard() {
                     ? `${listEvent.sponsorshipPackage.substring(0, 80)}...`
                     : listEvent.sponsorshipPackage}
                 </p>
-                {/* <img
-                  className="card-tag"
-                  src="https://cdn-icons.flaticon.com/png/512/3106/premium/3106777.png?token=exp=1660863227~hmac=d94e1ad1804d0087ad7818b50dd7d34c"
-                  alt=""
-                /> */}
               </div>
             </div>
           ))}

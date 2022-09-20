@@ -129,7 +129,7 @@ function EventProfile() {
           <div className="event-input">
             <div className="search-events">
               <FiSearch />
-              <input type="text" placeholder="Search for your event" />
+              <input type="text" placeholder="Search for listed events" />
             </div>
             <div className="event-btn">
               <Link to="/create-event" className="custom-btn">
