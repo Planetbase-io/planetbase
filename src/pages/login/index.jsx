@@ -89,12 +89,12 @@ function Login() {
           {togglePass ? "Hide" : "Show"} Password
         </small>
         {/* <p>Forgot Password ?</p> */}
-        <p style={{ paddingTop: "1rem" }}>
+        {/* <p style={{ paddingTop: "1rem" }}>
           Forgot Password?{" "}
           <Link to="/forgotpassword" style={{ textDecoration: "underline" }}>
             Reset it
           </Link>
-        </p>
+        </p> */}
         <button
           type="submit"
           className="input-button"
