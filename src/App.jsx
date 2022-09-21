@@ -20,6 +20,8 @@ import {
 } from "./pages/index";
 import SuccessPage from "./pages/sponsor/sponsor-bid/SuccessPage";
 import ReactGA from "react-ga";
+import ForgotPassword from "./pages/resetpassword/ForgotPassword";
+import ResetPassword from "./pages/resetpassword/ResetPassword";
 
 function App() {
   const TRACKING_ID = "G-YNHY0F62PQ";
@@ -45,6 +47,12 @@ function App() {
           <Route exact path="/resources" element={<Resources />} />
           <Route exact path="/company" element={<Company />} />
           <Route exact path="/success" element={<SuccessPage />} />
+          <Route exact path="/forgotpassword" element={<ForgotPassword />} />
+          <Route
+            exact
+            path="/resetpassword/:resetToken"
+            element={<ResetPassword />}
+          />
         </Routes>
       </Router>
       <ToastContainer />

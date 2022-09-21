@@ -57,70 +57,78 @@ function SignUp() {
           navigate("/organizer");
         })
         .catch((error) => {
+          setIsLoading(false);
           localStorage.clear();
-          const { message } = error.response.data;
+          const { message } = error?.response.data;
+          if (error.message.includes("Network Error")) {
+            setError(
+              "Network Error. Check your internet connection and retry again."
+            );
+          }
           console.error(message);
           setTimeout(() => {
             setError(null);
-          }, 7000);
+          }, 10000);
           setError(message);
-          setIsLoading(false);
         });
     }
   }
 
   return (
     <Layout>
+      <small style={{ color: "red", marginLeft: "7rem", marginRight: "7rem" }}>
+        {error}
+      </small>
       <SignUpComponent header="Sign up to Planetbase.">
         <div className="sign-in">
-        <p className="signup-header">Let's setup an account for you</p>
-        <p style={{ textAlign: "center" }}>
-          Already Have an Account?{" "}
-          <Link
-            to="/login"
-            style={{ textDecoration: "none", color: "#0F255F" }}
-          >
-            Login
-          </Link>
-        </p>
-        <form className="input-container" onSubmit={onSubmit}>
-          <input
-            type="text"
-            name="firstname"
-            id="firstname"
-            placeholder="First Name"
-            value={firstname}
-            onChange={onChange}
-            required
-          />
-          <input
-            type="text"
-            name="lastname"
-            id="lastname"
-            placeholder="Last Name"
-            value={lastname}
-            onChange={onChange}
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Email Address"
-            value={email}
-            onChange={onChange}
-            required
-          />
-          <input
-            type={togglePass ? "text" : "password"}
-            name="password"
-            id="password"
-            placeholder="Enter Password"
-            value={password}
-            onChange={onChange}
-            required
-          />
-          {/* <span
+          <p className="signup-header">Let's setup an account for you</p>
+          <p style={{ textAlign: "center" }}>
+            Already Have an Account?{" "}
+            <Link
+              to="/login"
+              style={{ textDecoration: "none", color: "#0F255F" }}
+            >
+              Login
+            </Link>
+          </p>
+          <form className="input-container" onSubmit={onSubmit}>
+            <input
+              type="text"
+              name="firstname"
+              id="firstname"
+              placeholder="First Name"
+              value={firstname}
+              onChange={onChange}
+              required
+            />
+            <input
+              type="text"
+              name="lastname"
+              id="lastname"
+              placeholder="Last Name"
+              value={lastname}
+              onChange={onChange}
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email Address"
+              value={email}
+              onChange={onChange}
+              required
+            />
+            <input
+              type={togglePass ? "text" : "password"}
+              name="password"
+              id="password"
+              placeholder="Enter Password"
+              value={password}
+              onChange={onChange}
+              required
+            />
+            {/* <span
           style={{
             position: "relative",
             top: "2.5rem",
@@ -130,70 +138,63 @@ function SignUp() {
         >
           <FaEye />
         </span> */}
-          <input
-            type={togglePass ? "text" : "password"}
-            name="confirmPass"
-            id="password2"
-            placeholder="Confirm Password"
-            value={confirmPass}
-            onChange={onChange}
-            required
-          />
-          <small
-            className="password-notification"
-            style={{
-              fontSize: "11px",
-              textAlign: "center",
-              marginLeft: "3rem",
-              marginRight: "3rem",
-            }}
-          >
-            Passwords must contain at least 8 characters, <br />
-            and must have at least one capital, one lower-case letter (Aa-Zz),{" "}
-            <br />
-            one special symbol (#, &, % etc), and one number (0-9)
-          </small>
-          <small
-            style={{ textDecoration: "underline", cursor: "pointer" }}
-            onClick={togglePassFunc}
-          >
-            {togglePass ? "Hide" : "Show"} Password
-          </small>
-          {error && (
-            <small
-              style={{ color: "red", marginLeft: "7rem", marginRight: "7rem" }}
-            >
-              {error}
-            </small>
-          )}
-          <div
-            className="checkbox-container"
-            style={{ marginLeft: "2rem", marginRight: "2rem" }}
-          >
             <input
-              type="checkbox"
-              name="productUpdates"
-              id="productUpdates"
-              defaultChecked={productUpdates}
-              onChange={() => {
-                setProductUpdates(!productUpdates);
-                console.log(productUpdates);
-              }}
+              type={togglePass ? "text" : "password"}
+              name="confirmPass"
+              id="password2"
+              placeholder="Confirm Password"
+              value={confirmPass}
+              onChange={onChange}
+              required
             />
-            <p>
-              Send me product updates and marketing communications from
-              Planetbase
-            </p>
-          </div>
-          <button
-            type="submit"
-            className="input-button"
-            disabled={isLoading ? true : false}
-            style={{ cursor: isLoading ? "not-allowed" : "pointer" }}
-          >
-            {isLoading ? "Signing Up..." : "Sign Up"}
-          </button>
-        </form>
+            <small
+              className="password-notification"
+              style={{
+                fontSize: "11px",
+                textAlign: "center",
+                marginLeft: "3rem",
+                marginRight: "3rem",
+              }}
+            >
+              Passwords must contain at least 8 characters, <br />
+              and must have at least one capital, one lower-case letter (Aa-Zz),{" "}
+              <br />
+              one special symbol (#, &, % etc), and one number (0-9)
+            </small>
+            <small
+              style={{ textDecoration: "underline", cursor: "pointer" }}
+              onClick={togglePassFunc}
+            >
+              {togglePass ? "Hide" : "Show"} Password
+            </small>
+            <div
+              className="checkbox-container"
+              style={{ marginLeft: "2rem", marginRight: "2rem" }}
+            >
+              <input
+                type="checkbox"
+                name="productUpdates"
+                id="productUpdates"
+                defaultChecked={productUpdates}
+                onChange={() => {
+                  setProductUpdates(!productUpdates);
+                  console.log(productUpdates);
+                }}
+              />
+              <p>
+                Send me product updates and marketing communications from
+                Planetbase
+              </p>
+            </div>
+            <button
+              type="submit"
+              className="input-button"
+              disabled={isLoading ? true : false}
+              style={{ cursor: isLoading ? "not-allowed" : "pointer" }}
+            >
+              {isLoading ? "Signing Up..." : "Sign Up"}
+            </button>
+          </form>
         </div>
       </SignUpComponent>
     </Layout>
