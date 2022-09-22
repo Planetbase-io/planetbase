@@ -65,7 +65,7 @@ const ResetPassword = () => {
         </small>
       </div>
       <form
-        style={{ padding: "1rem", textAlign: "center" }}
+        style={{ padding: "2rem", textAlign: "center" }}
         onSubmit={handleSubmit}
       >
         <p>{message}</p>
