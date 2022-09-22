@@ -1,11 +1,9 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Navbar from "../../components/NavBar/Navbar";
 import Axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 
 const ResetPassword = () => {
-  const navigate = useNavigate();
-  const { resetToken } = useParams();
   const [passwords, setPasswords] = useState({
     password: "",
     confirmPass: "",
@@ -15,6 +13,8 @@ const ResetPassword = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState("");
   const [togglePass, setTogglePass] = useState(false);
+  const navigate = useNavigate();
+  const { resetToken } = useParams();
   const handlePassword = (e) => {
     setPasswords((prevValue) => {
       return { ...prevValue, [e.target.name]: e.target.value };
@@ -49,7 +49,7 @@ const ResetPassword = () => {
   return (
     <div>
       <Navbar />
-      <div style={{ textAlign: "center" }}>
+      <div style={{ textAlign: "center", padding: "1rem" }}>
         <h1>Reset Password</h1>
         <p>Type in a new password below to reset your forgotten password</p>
         <small
@@ -65,7 +65,7 @@ const ResetPassword = () => {
         </small>
       </div>
       <form
-        style={{ margin: "5rem", textAlign: "center" }}
+        style={{ padding: "1rem", textAlign: "center" }}
         onSubmit={handleSubmit}
       >
         <p>{message}</p>
@@ -76,7 +76,7 @@ const ResetPassword = () => {
           placeholder="New Password"
           onChange={handlePassword}
           required
-          style={{ marginBottom: "10px" }}
+          style={{ marginBottom: "10px", width: "100%" }}
           value={password}
         />
         <br />
@@ -87,6 +87,7 @@ const ResetPassword = () => {
           onChange={handlePassword}
           required
           value={confirmPass}
+          style={{ width: "100%" }}
         />
         <p
           onClick={() => setTogglePass(!togglePass)}
