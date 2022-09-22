@@ -1,25 +1,24 @@
 .sign-in {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     border-bottom-left-radius:20px ;
-    width: 35%;
+    max-width: 450px;
     margin: 30px auto;
     padding:1px;
 }
 
-@media screen and (max-width: 1100px) {
-    .sign-in {
-        width: 45%;
-      }
-}
 
 @media screen and (max-width: 700px) {
-    .sign-in {
-        width: 65%;
+   .sign-in {
+        width: 92%;
+        padding:1px 0;
+        margin: 45px auto;
       }
 }
 
 @media screen and (max-width: 500px) {
     .sign-in {
-        width: 85%;
+        width: 92%;
+        padding:1px 0;
+        margin: 45px auto;
       }
-}
+} 
