@@ -25,10 +25,10 @@ function Subscribe() {
               <input
                 type="email"
                 name="email"
-                class="subscribe-input"
+                className="subscribe-input"
                 placeholder="Enter Your Email Address"
               />
-              <div class="submit-btn">SUBMIT</div>
+              <div className="submit-btn">SUBMIT</div>
             </div>
           </div>
 

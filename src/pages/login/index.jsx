@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Layout from "../../layouts/login-registration";
-import { useState } from "react";
 import Axios from "axios";
 import { useNavigate } from "react-router-dom";
 import useAnalyticsEventTracker from "../../useAnalytics";
+import { Link } from "react-router-dom";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -40,38 +40,29 @@ function Login() {
         setIsLoading(false);
       })
       .catch((error) => {
-        console.error(error.response);
-        const { message } = error?.response.data;
-        localStorage.clear();
-        setTimeout(() => {
-          setError("");
-        }, 5000);
-        setError(message);
         setIsLoading(false);
+        console.error(error.message);
+        if (error.response.data) {
+          const { message } = error?.response.data;
+          setError(message);
+        }
+        localStorage.clear();
+        if (error.message.includes("Network Error")) {
+          setError(
+            "Network Error. Check your internet connection and retry again."
+          );
+        }
+        console.log(error);
+        setTimeout(() => {
+          setError(null);
+        }, 10000);
       });
   }
-  // const responseGoogle = async (response) => {
-  //   console.log(response);
-  // };
 
   return (
     <Layout>
       <div style={{ textAlign: "center" }}>
-        {/* <GoogleLogin
-          clientId="429120308298-nqsa7pn2os1gs4uak2efcea72bsrumdu.apps.googleusercontent.com"
-          render={(renderProps) => (
-            <button
-              onClick={renderProps.onClick}
-              disabled={renderProps.disabled}
-            >
-              This is my custom Google button
-            </button>
-          )}
-          buttonText="Login"
-          onSuccess={responseGoogle}
-          onFailure={responseGoogle}
-          cookiePolicy="single_host_origin"
-        /> */}
+        <small>{error}</small>
       </div>
       <form className="input-container" onSubmit={onSubmit}>
         <input
@@ -99,6 +90,15 @@ function Login() {
           {togglePass ? "Hide" : "Show"} Password
         </small>
         {/* <p>Forgot Password ?</p> */}
+        <p style={{ paddingTop: "1rem" }}>
+          Forgot Password?{" "}
+          <Link
+            to="/forgotpassword"
+            style={{ textDecoration: "underline", color: "#0F255F" }}
+          >
+            Reset it
+          </Link>
+        </p>
         <button
           type="submit"
           className="input-button"
@@ -108,7 +108,6 @@ function Login() {
         >
           {isLoading ? "Signing In..." : "Sign In"}
         </button>
-        <small>{error}</small>
       </form>
     </Layout>
   );
