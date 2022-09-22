@@ -78,7 +78,7 @@ function SignUp() {
           Already Have an Account?{" "}
           <Link
             to="/login"
-            style={{ textDecoration: "none", color: "#0F255F" }}
+            className="signup-message"
           >
             Login
           </Link>
@@ -146,6 +146,7 @@ function SignUp() {
               textAlign: "center",
               marginLeft: "3rem",
               marginRight: "3rem",
+              color: "#17386eef"
             }}
           >
             Passwords must contain at least 8 characters, <br />

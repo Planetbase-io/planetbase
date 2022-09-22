@@ -40,7 +40,6 @@ function Login() {
         setIsLoading(false);
       })
       .catch((error) => {
-        // const { message } = error.response.data;
         console.error(error.response);
         const { message } = error?.response.data;
         localStorage.clear();
