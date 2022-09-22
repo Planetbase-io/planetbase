@@ -5,6 +5,7 @@ import "./style.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Axios from "axios";
+import Loader from "../../components/Loader/Loader";
 
 export function NoEvents() {
   const token = localStorage.getItem("token");
@@ -81,66 +82,44 @@ function EventProfile() {
 
   if (isLoading) {
     return (
-      <div className="loader">
-        <div>
-          <h3 className="loading-text">
-            Fetching Events... This may take some time
-          </h3>
-        </div>
-        <div className="loader-inner">
-          <div className="loader-line-wrap">
-            <div className="loader-line"></div>
-          </div>
-          <div className="loader-line-wrap">
-            <div className="loader-line"></div>
-          </div>
-          <div className="loader-line-wrap">
-            <div className="loader-line"></div>
-          </div>
-          <div className="loader-line-wrap">
-            <div className="loader-line"></div>
-          </div>
-          <div className="loader-line-wrap">
-            <div className="loader-line"></div>
-          </div>
-        </div>
-      </div>
+      <Loader/>
     );
   } else {
     return (
-      <EventLayout>
-        <h2 className="event-organizer">
-          {localStorage.getItem("firstname")}'s Organization Events
-        </h2>
-        <div className="event-all">
-          <div className="event-input">
-            <div className="search-events">
-              <FiSearch />
-              <input type="text" placeholder="Search for your event" />
-            </div>
-            <div className="event-btn">
-              <Link to="/create-event" className="custom-btn">
-                <span className="custom-span">List Events</span>
-              </Link>
-            </div>
-          </div>
-        </div>
-        <div className="event-all">
-          {events.length > 0 ? (
-            events.map((event) => (
-              <EventCard
-                eventImage={event?.eventImage}
-                eventDate={event?.scheduledDate}
-                eventTitle={event?.eventTitle}
-                // eventDesc={event.eventDesc}
-                key={event?._id}
-              />
-            ))
-          ) : (
-            <NoEvents />
-          )}
-        </div>
-      </EventLayout>
+      <Loader/>
+      // <EventLayout>
+      //   <h2 className="event-organizer">
+      //     {localStorage.getItem("firstname")}'s Organization Events
+      //   </h2>
+      //   <div className="event-all">
+      //     <div className="event-input">
+      //       <div className="search-events">
+      //         <FiSearch />
+      //         <input type="text" placeholder="Search for your event" />
+      //       </div>
+      //       <div className="event-btn">
+      //         <Link to="/create-event" className="custom-btn">
+      //           <span className="custom-span">List Events</span>
+      //         </Link>
+      //       </div>
+      //     </div>
+      //   </div>
+      //   <div className="event-all">
+      //     {events.length > 0 ? (
+      //       events.map((event) => (
+      //         <EventCard
+      //           eventImage={event?.eventImage}
+      //           eventDate={event?.scheduledDate}
+      //           eventTitle={event?.eventTitle}
+      //           // eventDesc={event.eventDesc}
+      //           key={event?._id}
+      //         />
+      //       ))
+      //     ) : (
+      //       <NoEvents />
+      //     )}
+      //   </div>
+      // </EventLayout>
     );
   }
 }

@@ -6,6 +6,7 @@ import React, { useState, useEffect } from "react";
 import Modal from "../Modal/Modal";
 import SponsorModal from "../Modal/SponsorModal";
 import Axios from "axios";
+import Loader from "../Loader/Loader";
 
 function SponsorCard() {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,20 +49,7 @@ function SponsorCard() {
         </Modal>
       )}
       {isLoading ? (
-        <div className="loading-container">
-          <div className="loading">
-            <div className="loading__letter">L</div>
-            <div className="loading__letter">o</div>
-            <div className="loading__letter">a</div>
-            <div className="loading__letter">d</div>
-            <div className="loading__letter">i</div>
-            <div className="loading__letter">n</div>
-            <div className="loading__letter">g</div>
-            <div className="loading__letter">.</div>
-            <div className="loading__letter">.</div>
-            <div className="loading__letter">.</div>
-          </div>
-        </div>
+        <Loader/>
       ) : (
         <div className="sponsorships-layout">
           {events.map((listEvent, index) => (

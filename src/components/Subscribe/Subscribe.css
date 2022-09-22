@@ -7,7 +7,13 @@
 }
 
 .subscribe {
-  padding: 22px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  bottom: 22px;
+  padding: 19px 26px;
 }
 
 .subscribe-header > img {
@@ -24,7 +30,7 @@
 
 .parent-wrapper {
   position: relative;
-  width: 400px;
+  width: 340px;
   height: 270px;
   margin: 40px auto 0;
   border-radius: 4px;
@@ -113,23 +119,16 @@
   color: #17386e;
 }
 
-.subscribe {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  position: relative;
-  bottom: 22px;
-}
-
-.subscribe > div {
-  width: 38%;
-}
+/* .subscribe > div {
+  width: 47%;
+} */
 
 .policy {
   font-size: 13px;
   font-weight: 400;
-  margin: 20px 0;
+  margin: 20px auto;
+  width: 60%;
+  text-align: center;
 }
 
 .subscribe-wrapper {
@@ -155,19 +154,15 @@
 }
 
 @media screen and (max-width: 1111px) {
-  .subscribe > div {
-    width: 41%;
+  .parent-wrapper {
+    width: 294px;
+    height: 259px;
   }
 }
 
 @media screen and (max-width: 900px) {
-  .subscribe {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
   .policy {
-    margin: 12px 0;
+    margin: 12px auto;
   }
 
   .subscribe > div {
@@ -181,6 +176,7 @@
 
   .subscribe {
     flex-direction: column;
+    padding:0 10px;
   }
 
   .subscribe-header > h4 {
@@ -194,13 +190,15 @@
   }
 
   .subscribe > div > h4 {
-    font-size: 15px;
+    font-size: 22px;
+    text-align: center;
+    font-weight: 500;
   }
 
   .subscribe > div > p {
-    font-size: 14px;
-    color: rgba(27, 26, 26, 0.876);
+    font-size: 17px;
     font-weight: 400;
+    text-align: center;
   }
 
   .subscribe-text {

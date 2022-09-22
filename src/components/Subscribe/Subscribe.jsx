@@ -32,10 +32,10 @@ function Subscribe() {
             </div>
           </div>
 
-          <h6 className="policy">
+          <summary className="policy">
             By subscribing to our news letter, you have agreed to our Terms of
             Service and Privacy Policy.
-          </h6>
+          </summary>
         </div>
     </section>
   );
