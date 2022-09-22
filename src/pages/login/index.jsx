@@ -12,6 +12,7 @@ function Login() {
   const [isLoading, setIsLoading] = useState(false);
   const [togglePass, setTogglePass] = useState(false);
   const navigate = useNavigate();
+
   const handleEmail = (e) => {
     setEmail(e.target.value);
   };
