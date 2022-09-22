@@ -99,7 +99,7 @@
 .sponsor-btn {
   display: flex;
   justify-content: center;
-  margin: 10px 0;
+  margin-bottom: 40px;
 }
 
 @keyframes custom-btnrotate {
