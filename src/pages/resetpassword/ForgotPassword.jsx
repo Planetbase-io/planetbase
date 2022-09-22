@@ -29,12 +29,12 @@ const ForgotPassword = () => {
   return (
     <div>
       <Navbar />
-      <div style={{ textAlign: "center", marginTop: "2rem" }}>
+      <div style={{ textAlign: "center", marginTop: "2rem", padding: "1rem" }}>
         <h1>Forgot Your Password?</h1>
-        <p>Don't worry, just enter your email to reset it.</p>
+        <p>Don't worry, just enter your email below to reset it.</p>
       </div>
       <form
-        style={{ margin: "5rem", textAlign: "center" }}
+        style={{ padding: "2rem", textAlign: "center" }}
         onSubmit={handleSubmit}
       >
         {error && <p>{error}</p>}
@@ -45,6 +45,7 @@ const ForgotPassword = () => {
           }}
           placeholder="Enter your email address"
           required
+          style={{ width: "100%" }}
         />
         <br />
         <button
