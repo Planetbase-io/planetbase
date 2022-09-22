@@ -19,6 +19,7 @@ function SponsorCard() {
   const [scheduledDate, setScheduledDate] = useState("");
   const [eventLocation, setEventLocation] = useState("");
   const [sponsorshipPackage, setSponsorshipPackage] = useState("");
+  const [error, setError] = useState(null);
   const url = "https://planetbase-api.onrender.com/api/events/all-events";
   useEffect(() => {
     setIsLoading(true);
@@ -29,9 +30,22 @@ function SponsorCard() {
       })
       .catch((err) => {
         console.error(err);
+        setError(err.message);
       });
   }, []);
 
+  if (error) {
+    return (
+      <div>
+        <h1>{error}</h1>
+        <p>
+          Something is temporarily wrong with your network connection.
+          <br /> Please make sure you are connected to the internet and then
+          reload your browser.
+        </p>
+      </div>
+    );
+  }
   return (
     <div>
       {isOpen && (
@@ -54,7 +68,7 @@ function SponsorCard() {
         <div className="sponsorships-layout">
           {events.map((listEvent, index) => (
             <div
-              key={listEvent._id}
+              key={listEvent?._id}
               className="sp-card"
               onClick={() => {
                 toggleModal();
@@ -85,11 +99,6 @@ function SponsorCard() {
                     ? `${listEvent.sponsorshipPackage.substring(0, 80)}...`
                     : listEvent.sponsorshipPackage}
                 </p>
-                {/* <img
-                  className="card-tag"
-                  src="https://cdn-icons.flaticon.com/png/512/3106/premium/3106777.png?token=exp=1660863227~hmac=d94e1ad1804d0087ad7818b50dd7d34c"
-                  alt=""
-                /> */}
               </div>
             </div>
           ))}
