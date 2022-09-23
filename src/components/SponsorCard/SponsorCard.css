@@ -3,13 +3,13 @@
   display: flex;
   flex-wrap: wrap;
   background-color: #fff;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 
 .sp-card {
   display: flex;
-  width: 300px;
+  width: 280px;
   padding: 10px;
   margin: 12px;
   flex-direction: column;
