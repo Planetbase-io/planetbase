@@ -88,12 +88,12 @@ function SponsorCard() {
                 className="card-image"
               />
               <p className="card-title">{listEvent.eventTitle}</p>
+              <div className="card-content">
               <p className="card-desc">
                 {listEvent.eventDesc.length > 50
                   ? `${listEvent.eventDesc.substring(0, 100)}...`
                   : listEvent.eventDesc}
               </p>
-              <div className="card-content">
                 <p className="card-desc">
                   {listEvent.sponsorshipPackage.length > 80
                     ? `${listEvent.sponsorshipPackage.substring(0, 80)}...`
