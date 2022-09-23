@@ -45,7 +45,7 @@
   color: rgba(0, 0, 0, 0.792);
 }
 
-hr {
+.line {
   color: rgba(215, 206, 206, 0.379);
   height: 80vh;
 }
@@ -90,7 +90,7 @@ hr {
     width: 100%;
   }
 
-  hr {
+  .line {
     display: none;
   }
 }

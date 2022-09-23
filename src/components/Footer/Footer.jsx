@@ -1,9 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Footer.css"
+import "./Footer.css";
 
 function Footer() {
-
   const token = localStorage.getItem("token");
 
   return (
@@ -12,8 +11,16 @@ function Footer() {
         <h3>Get Started with Planetbase</h3>
         <p>Pricing</p>
         <p>Contact us</p>
-        {token ? ("") :(<><p>Sign Up</p>
-        <p>Log in</p></>)}
+        {token ? (
+          ""
+        ) : (
+          <>
+            <p><Link to="/signup">Sign Up</Link></p>
+            <p>
+              <Link to="/login">Log in</Link>
+            </p>
+          </>
+        )}
       </div>
       <div>
         <h3>Company</h3>
@@ -24,7 +31,9 @@ function Footer() {
       </div>
       <div>
         <h3>Resources</h3>
-        <p><Link to="/support">Support</Link></p>
+        <p>
+          <Link to="/support">Support</Link>
+        </p>
         <p>Case studies</p>
         <p>Blog</p>
         <p>What's New</p>

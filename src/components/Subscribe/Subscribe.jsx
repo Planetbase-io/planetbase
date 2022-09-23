@@ -5,7 +5,7 @@ import "./Subscribe.css";
 function Subscribe() {
   return (
     <section className="subscribe">
-        <div>
+        <div className="subscribe-details">
           <div className="subscribe-header">
             <img src={PBlogo} alt="planetbase logo" />
           </div>
@@ -32,10 +32,10 @@ function Subscribe() {
             </div>
           </div>
 
-          <h6 className="policy">
+          <summary className="policy">
             By subscribing to our news letter, you have agreed to our Terms of
             Service and Privacy Policy.
-          </h6>
+          </summary>
         </div>
     </section>
   );
