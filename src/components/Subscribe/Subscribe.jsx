@@ -5,7 +5,7 @@ import "./Subscribe.css";
 function Subscribe() {
   return (
     <section className="subscribe">
-        <div>
+        <div className="subscribe-details">
           <div className="subscribe-header">
             <img src={PBlogo} alt="planetbase logo" />
           </div>

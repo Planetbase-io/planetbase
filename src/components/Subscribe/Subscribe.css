@@ -8,12 +8,14 @@
 
 .subscribe {
   display: flex;
-  align-items: center;
   justify-content: space-between;
   width: 100%;
   position: relative;
-  bottom: 22px;
   padding: 19px 26px;
+}
+
+.subscribe-details {
+  margin-top: 50px;
 }
 
 .subscribe-header > img {
@@ -168,7 +170,6 @@
   .subscribe > div {
     width: 100%;
     line-height: 123%;
-    margin: 16px;
   }
   .subscribe-form {
     width: 50%;
