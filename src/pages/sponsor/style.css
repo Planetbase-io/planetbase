@@ -38,11 +38,7 @@
 }
 
 .sponsorships-layout {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  display: flex;
 }
 
 .sponsor-btn {
@@ -173,10 +169,6 @@
 }
 
 @media screen and (max-width: 978px) {
-  .sponsorships-layout {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .sponsor-form {
     width: 80%;
   }
@@ -192,9 +184,6 @@
 }
 
 @media screen and (max-width: 580px) {
-  .sponsorships-layout {
-    grid-template-columns: repeat(1, 1fr);
-  }
   .sponsors > h2 {
     font-size: 5.9vw;
     font-weight: 500;

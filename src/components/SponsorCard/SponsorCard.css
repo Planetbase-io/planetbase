@@ -5,15 +5,15 @@
 
 .sp-card {
   display: flex;
-  flex-direction: column;
-  width: 90%;
+  width: 300px;
   padding: 10px;
-  margin: 17px auto;
+  margin: 12px auto;
+  flex-wrap: wrap;
 }
 
 .sp-card > img {
-  width: 100%;
-  height: 200px;
+  max-width: 300px;
+  max-height: 300px;
   object-fit: contain;
 }
 
@@ -40,101 +40,4 @@
   display: flex;
   flex-direction: column;
   margin: 10px auto;
-}
-
-.loading-container {
-  height: 50vh;
-  margin: 0 auto;
-  text-align: center;
-  overflow: hidden;
-}
-
-.loading {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin: 0 auto;
-}
-
-.loading__letter {
-  font-size: 88px;
-  font-weight: normal;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  font-family: "Audiowide";
-  color: #17386e;
-  margin-top: 40px;
-  font-family: "Poppins";
-}
-
-@keyframes bounce {
-  0% {
-    transform: translateY(0px);
-  }
-  40% {
-    transform: translateY(-40px);
-  }
-  80%,
-  100% {
-    transform: translateY(0px);
-  }
-}
-
-.loading__letter {
-  font-size: 88px;
-  font-weight: normal;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  animation-name: bounce;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-}
-
-.loading__letter:nth-child(2) {
-  animation-delay: 0.1s;
-  color: hsl(0, 80%, 60%);
-}
-.loading__letter:nth-child(3) {
-  animation-delay: 0.2s;
-  color: hsl(204, 100%, 50%);
-}
-.loading__letter:nth-child(4) {
-  animation-delay: 0.3s;
-  color: hsl(222, 60%, 39%);
-}
-.loading__letter:nth-child(5) {
-  animation-delay: 0.4s;
-  color: hsl(211, 80%, 60%);
-}
-.loading__letter:nth-child(6) {
-  animation-delay: 0.5s;
-  color: hsl(180, 80%, 60%);
-}
-.loading__letter:nth-child(7) {
-  animation-delay: 0.6s;
-}
-.loading__letter:nth-child(8) {
-  animation-delay: 0.8s;
-  color: hsl(0, 80%, 60%);
-}
-.loading__letter:nth-child(9) {
-  animation-delay: 1s;
-  color: hsl(211, 80%, 60%);
-}
-.loading__letter:nth-child(10) {
-  animation-delay: 1.2s;
-}
-
-@media screen and (max-width: 700px) {
-  .loading__letter {
-    font-size: 63px;
-    margin-top: 50px;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .loading__letter {
-    font-size: 53px;
-    margin-top: 40px;
-  }
 }
