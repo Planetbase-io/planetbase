@@ -1,8 +1,5 @@
-// import React from "react";
 import "./SponsorCard.css";
 import React, { useState, useEffect } from "react";
-// import "./Card.css";
-// import { cards } from "../../utils/sponsorslist";
 import Modal from "../Modal/Modal";
 import SponsorModal from "../Modal/SponsorModal";
 import Axios from "axios";
@@ -71,7 +68,6 @@ function SponsorCard() {
               key={listEvent?._id}
               className="sp-card"
               onClick={() => {
-                toggleModal();
                 setEventTitle(listEvent.eventTitle);
                 setEventDesc(listEvent.eventDesc);
                 setEventImage(listEvent.eventImage);
@@ -94,11 +90,17 @@ function SponsorCard() {
                     ? `${listEvent.eventDesc.substring(0, 100)}...`
                     : listEvent.eventDesc}
                 </p>
-                <p className="card-desc">
+                {/* <p className="card-desc">
                   {listEvent.sponsorshipPackage.length > 80
                     ? `${listEvent.sponsorshipPackage.substring(0, 80)}...`
                     : listEvent.sponsorshipPackage}
-                </p>
+                </p> */}
+                <button
+                  className="btn-primary read-more-btn"
+                  onClick={()=> toggleModal()}
+                >
+                  Read More
+                </button>
               </div>
             </div>
           ))}
