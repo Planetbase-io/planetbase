@@ -32,7 +32,6 @@
   
   .card-desc {
     font-size: 14px;
-    margin: 10px auto;
     text-align: center;
     line-height: 21px !important;
   }
@@ -44,6 +43,7 @@
     justify-content: space-between;
     flex-direction: row;
     width: 100%;
+    margin: 10px auto;
   }
   
   .loading-container {
