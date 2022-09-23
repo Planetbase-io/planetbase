@@ -5,38 +5,35 @@ import "./Subscribe.css";
 function Subscribe() {
   return (
     <section className="subscribe">
-        <div className="subscribe-details">
-          <div className="subscribe-header">
-            <img src={PBlogo} alt="planetbase logo" />
-          </div>
-          <h4>
-            Moving your events online really opens up the esteem of supporting
-            it
-          </h4>
-          <p>
-            Become a subscriber and become the first to receive Information.
-          </p>
+      <div className="subscribe-details">
+        <div className="subscribe-header">
+          <img src={PBlogo} alt="planetbase logo" />
         </div>
-        <div>
-          <div class="parent-wrapper">
-            <span></span>
-            <div class="subscribe-wrapper">
-              <h4>SUBSCRIBE TO OUR NEWSLETTER</h4>
-              <input
-                type="email"
-                name="email"
-                className="subscribe-input"
-                placeholder="Enter Your Email Address"
-              />
-              <div className="submit-btn">SUBMIT</div>
-            </div>
+        <h4>
+          Moving your events online really opens up the esteem of supporting it
+        </h4>
+        <p>Become a subscriber and become the first to receive Information.</p>
+      </div>
+      <div>
+        <div className="parent-wrapper">
+          <span></span>
+          <div className="subscribe-wrapper">
+            <h4>SUBSCRIBE TO OUR NEWSLETTER</h4>
+            <input
+              type="email"
+              name="email"
+              className="subscribe-input"
+              placeholder="Enter Your Email Address"
+            />
+            <div className="submit-btn">SUBMIT</div>
           </div>
+        </div>
 
-          <summary className="policy">
-            By subscribing to our news letter, you have agreed to our Terms of
-            Service and Privacy Policy.
-          </summary>
-        </div>
+        <summary className="policy">
+          By subscribing to our news letter, you have agreed to our Terms of
+          Service and Privacy Policy.
+        </summary>
+      </div>
     </section>
   );
 }
