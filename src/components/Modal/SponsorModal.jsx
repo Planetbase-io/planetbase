@@ -8,6 +8,8 @@ function SponsorModal({
   eventImage,
   scheduledDate,
   eventLocation,
+  sponsorshipPackage,
+  price,
 }) {
   console.log(eventTitle);
 
@@ -19,10 +21,14 @@ function SponsorModal({
       <h4>{eventTitle}</h4>
       <h5>Event Description</h5>
       <p>{eventDesc}</p>
+      <h5>Sponsorship Package</h5>
+      <p>{sponsorshipPackage}</p>
       <h5>Date scheduled for this event</h5>
       <p>{scheduledDate}</p>
       <h5>Event Location</h5>
       <p className="address">{eventLocation}</p>
+      <h5>Price</h5>
+      <p>₦{price}</p>
       <div className="sponsor-btn">
         <Link to="/sponsor-bid">
           <button className="custom-btn">
