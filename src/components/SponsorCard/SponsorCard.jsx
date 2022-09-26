@@ -42,7 +42,7 @@ function SponsorCard() {
         <p>
           Something is temporarily wrong with your network connection.
           <br /> Please make sure you are connected to the internet and then
-          refresh your browser.
+          reload your browser.
         </p>
       </div>
     );
