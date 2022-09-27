@@ -78,13 +78,16 @@ function EventProfile() {
       .catch((err) => {
         console.error(err);
         setIsLoading(false);
+        if (err.message.includes("Network Error")) {
+          setError("Network Error");
+        }
         setError(err.message);
       });
   }, []);
 
   if (isLoading) {
     return <Loader />;
-  } else if (error) {
+  } else if (error === "Network Error") {
     return (
       <div style={{ padding: "2rem" }}>
         <h1>{error}</h1>
@@ -93,6 +96,12 @@ function EventProfile() {
           <br /> Please make sure you are connected to the internet and then
           reload your browser.
         </p>
+      </div>
+    );
+  } else if (error) {
+    return (
+      <div style={{ padding: "2rem" }}>
+        <h1>{error}</h1>
       </div>
     );
   } else {
@@ -147,6 +156,13 @@ export function EventCard({
   sponsorshipPackage,
   eventDesc,
 }) {
+  const navigate = useNavigate();
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      navigate("/login");
+    }
+  }, []);
   return (
     <div className="event-rows" key={eventKey}>
       <img src={eventImage} alt="a picture of an event image" />
