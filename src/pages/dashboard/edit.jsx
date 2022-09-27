@@ -7,6 +7,12 @@ import { useForm } from "react-hook-form";
 function EditEvent() {
   const [image, setImage] = useState("");
   const navigate = useNavigate();
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      navigate("/login");
+    }
+  }, []);
 
   function convert2base64(e) {
     const file = e.target.files[0];
