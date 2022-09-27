@@ -239,10 +239,7 @@ function EditEvent() {
                   Give your event a visual expression to make it more
                   noticeable.
                 </p>
-                <span>
-                  Upload photos in JPEG, JPG, PNG and ensure the size is 424 by
-                  250 pixels.
-                </span>
+                <span>Upload photos in JPEG, JPG or PNG.</span>
               </div>
             </div>
           </div>
