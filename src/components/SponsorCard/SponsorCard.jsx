@@ -17,6 +17,7 @@ function SponsorCard() {
   const [eventLocation, setEventLocation] = useState("");
   const [sponsorshipPackage, setSponsorshipPackage] = useState("");
   const [error, setError] = useState(null);
+  const [price, setPrice] = useState("");
   const url = "https://planetbase-api.onrender.com/api/events/all-events";
   useEffect(() => {
     setIsLoading(true);
@@ -56,6 +57,7 @@ function SponsorCard() {
             sponsorshipPackage={sponsorshipPackage}
             scheduledDate={scheduledDate}
             eventLocation={eventLocation}
+            price={price}
           />
         </Modal>
       )}
@@ -74,9 +76,11 @@ function SponsorCard() {
                 setSponsorshipPackage(listEvent.sponsorshipPackage);
                 setScheduledDate(listEvent.scheduledDate);
                 setEventLocation(listEvent.eventLocation);
+                setPrice(listEvent.price);
                 localStorage.setItem("organizerId", listEvent.organizerId);
                 console.log(listEvent.organizerId);
               }}
+              style={{ marginBottom: "3rem" }}
             >
               <img
                 src={listEvent.eventImage}
@@ -102,6 +106,20 @@ function SponsorCard() {
                   Read More
                 </button>
               </div>
+              <button
+                onClick={() => toggleModal()}
+                style={{
+                  color: "white",
+                  paddingTop: "0.5rem",
+                  paddingBottom: "0.5rem",
+                  fontSize: "15px",
+                  borderRadius: "15px",
+                  backgroundColor: "#0F255F",
+                  width: "30%",
+                }}
+              >
+                See more
+              </button>
             </div>
           ))}
         </div>

@@ -47,8 +47,8 @@ export function NoEvents() {
 //
 function EventProfile() {
   const navigate = useNavigate();
-  const [events, setEvents] = React.useState([]);
-  const [isLoading, setIsLoading] = React.useState(false);
+  const [events, setEvents] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
   const url = "https://planetbase-api.onrender.com/api/events/organizer-events";
@@ -78,15 +78,16 @@ function EventProfile() {
       .catch((err) => {
         console.error(err);
         setIsLoading(false);
+        if (err.message.includes("Network Error")) {
+          setError("Network Error");
+        }
         setError(err.message);
       });
   }, []);
 
   if (isLoading) {
-    return (
-      <Loader/>
-    );
-  } else if (error) {
+    return <Loader />;
+  } else if (error === "Network Error") {
     return (
       <div style={{ padding: "2rem" }}>
         <h1>{error}</h1>
@@ -97,41 +98,15 @@ function EventProfile() {
         </p>
       </div>
     );
+  } else if (error) {
+    localStorage.clear();
+    return (
+      <div style={{ padding: "2rem" }}>
+        <h1>{error}</h1>
+      </div>
+    );
   } else {
     return (
-      // <EventLayout>
-      //   <h2 className="event-organizer">
-      //     {localStorage.getItem("firstname")}'s Organization Events
-      //   </h2>
-      //   <div className="event-all">
-      //     <div className="event-input">
-      //       <div className="search-events">
-      //         <FiSearch />
-      //         <input type="text" placeholder="Search for your event" />
-      //       </div>
-      //       <div className="event-btn">
-      //         <Link to="/create-event" className="custom-btn">
-      //           <span className="custom-span">List Events</span>
-      //         </Link>
-      //       </div>
-      //     </div>
-      //   </div>
-      //   <div className="event-all">
-      //     {events.length > 0 ? (
-      //       events.map((event) => (
-      //         <EventCard
-      //           eventImage={event?.eventImage}
-      //           eventDate={event?.scheduledDate}
-      //           eventTitle={event?.eventTitle}
-      //           // eventDesc={event.eventDesc}
-      //           key={event?._id}
-      //         />
-      //       ))
-      //     ) : (
-      //       <NoEvents />
-      //     )}
-      //   </div>
-      // </EventLayout>
       <EventLayout>
         <h2 className="event-organizer">
           {localStorage.getItem("firstname")}'s Organization Events
@@ -157,8 +132,9 @@ function EventProfile() {
                   eventImage={event.eventImage}
                   eventDate={event.scheduledDate}
                   eventTitle={event.eventTitle}
-                  // eventDesc={event.eventDesc}
+                  eventDesc={event.eventDesc}
                   eventKey={event._id}
+                  sponsorshipPackage={event.sponsorshipPackage}
                 />
               </div>
             ))
@@ -173,7 +149,21 @@ function EventProfile() {
 
 export default EventProfile;
 
-export function EventCard({ eventImage, eventKey, eventDate, eventTitle }) {
+export function EventCard({
+  eventImage,
+  eventKey,
+  eventDate,
+  eventTitle,
+  sponsorshipPackage,
+  eventDesc,
+}) {
+  const navigate = useNavigate();
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      navigate("/login");
+    }
+  }, []);
   return (
     <div className="event-rows" key={eventKey}>
       <img src={eventImage} alt="a picture of an event image" />
@@ -194,6 +184,18 @@ export function EventCard({ eventImage, eventKey, eventDate, eventTitle }) {
         <h3>Status</h3>
         <div>
           <p>Pending</p>
+        </div>
+      </div>
+      <div>
+        <h3>Sponsorship Package</h3>
+        <div>
+          <p>{sponsorshipPackage}</p>
+        </div>
+      </div>
+      <div>
+        <h3>Event Description</h3>
+        <div>
+          <p>{eventDesc}</p>
         </div>
       </div>
       {/* <div>

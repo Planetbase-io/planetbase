@@ -7,6 +7,12 @@ import { useForm } from "react-hook-form";
 function EditEvent() {
   const [image, setImage] = useState("");
   const navigate = useNavigate();
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      navigate("/login");
+    }
+  }, []);
 
   function convert2base64(e) {
     const file = e.target.files[0];
@@ -88,7 +94,12 @@ function EditEvent() {
         <form onSubmit={onSubmit} className="form">
           <div className="form-control">
             <div>
-              <p>Event Title</p>
+              <small>
+                Required <span style={{ color: "red" }}>*</span>
+              </small>
+              <p>
+                Event Title <span style={{ color: "red" }}>*</span>
+              </p>
               <input
                 type="text"
                 name="eventTitle"
@@ -100,7 +111,9 @@ function EditEvent() {
               />
             </div>
             <div>
-              <p>Event Organizer/Host</p>
+              <p>
+                Event Organizer/Host <span style={{ color: "red" }}>*</span>
+              </p>
               <input
                 type="text"
                 name="eventOrganizer"
@@ -115,7 +128,9 @@ function EditEvent() {
           </div>
           <div className="form-control">
             <div>
-              <p>Event Type/Category</p>
+              <p>
+                Event Type/Category <span style={{ color: "red" }}>*</span>
+              </p>
               <input
                 type="text"
                 name="eventType"
@@ -127,7 +142,9 @@ function EditEvent() {
               />
             </div>
             <div>
-              <p>Scheduled Date</p>
+              <p>
+                Scheduled Date <span style={{ color: "red" }}>*</span>
+              </p>
               <input
                 type="date"
                 id="scheduledDate"
@@ -140,7 +157,9 @@ function EditEvent() {
           </div>
           <div className="form-control price">
             <div className="">
-              <p>Event Location</p>
+              <p>
+                Event Location <span style={{ color: "red" }}>*</span>
+              </p>
               <input
                 type="text"
                 id="eventLocation"
@@ -151,7 +170,9 @@ function EditEvent() {
               />
             </div>
             <div>
-              <p>Price</p>
+              <p>
+                Price <span style={{ color: "red" }}>*</span>
+              </p>
               <input
                 type="text"
                 placeholder="₦"
@@ -165,7 +186,9 @@ function EditEvent() {
           </div>
           <div>
             <div className="description">
-              <p>Event Description</p>
+              <p>
+                Event Description <span style={{ color: "red" }}>*</span>
+              </p>
               <textarea
                 name="eventDesc"
                 id="eventDesc"
@@ -178,7 +201,9 @@ function EditEvent() {
               ></textarea>
             </div>
             <div className="description">
-              <p>Sponsorship Package</p>
+              <p>
+                Sponsorship Package <span style={{ color: "red" }}>*</span>
+              </p>
               <textarea
                 name="sponsorshipPackage"
                 id="sponsorshipPackage"
@@ -214,10 +239,7 @@ function EditEvent() {
                   Give your event a visual expression to make it more
                   noticeable.
                 </p>
-                <span>
-                  Upload photos in JPEG, JPG, PNG and ensure the size is 424 by
-                  250 pixels.
-                </span>
+                <span>Upload photos in JPEG, JPG or PNG.</span>
               </div>
             </div>
           </div>
