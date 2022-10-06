@@ -14,16 +14,11 @@
 }
 
 
-.modal-layout > img {
-  border-radius: 50%;
-  font-size: 30px;
-  color: rgb(255, 255, 255);
+.modal-layout > .close {
   transition: 0.5s;
-  width: 60px;
   position: absolute;
-  top: 0;
-  overflow: scroll;
-  cursor: pointer;
+  top: 15px;
+  background: transparent;
 }
 
 .modal-layout > img:hover {
@@ -40,7 +35,6 @@
   border-radius: 5px;
   position: relative;
   overflow: auto;
-  border-top: 7px solid white;
   transition: 0.5s;
   top: 65px;
   overflow: scroll;
@@ -51,6 +45,7 @@
   object-fit: contain;
   margin: 0 auto;
   display: flex;
+  border-top: 7px solid white;
 }
 
 .modal-layout > div > h4 {

@@ -82,11 +82,11 @@ function SponsorCard() {
               }}
               style={{ marginBottom: "3rem" }}
             >
-              <img
-                src={listEvent.eventImage}
-                alt="image"
-                className="card-image"
-              />
+               <img
+            src={listEvent.eventImage}
+            alt="image"
+            className="card-image"
+          />
               <div className="card-content">
                 <p className="card-title">{listEvent.eventTitle}</p>
                 <p className="card-desc">
@@ -106,20 +106,6 @@ function SponsorCard() {
                   Read More
                 </button>
               </div>
-              <button
-                onClick={() => toggleModal()}
-                style={{
-                  color: "white",
-                  paddingTop: "0.5rem",
-                  paddingBottom: "0.5rem",
-                  fontSize: "15px",
-                  borderRadius: "15px",
-                  backgroundColor: "#0F255F",
-                  width: "30%",
-                }}
-              >
-                See more
-              </button>
             </div>
           ))}
         </div>
