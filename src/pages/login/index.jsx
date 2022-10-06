@@ -89,7 +89,6 @@ function Login() {
         >
           {togglePass ? "Hide" : "Show"} Password
         </small>
-        {/* <p>Forgot Password ?</p> */}
         <p style={{ paddingTop: "1rem" }}>
           Forgot Password?{" "}
           <Link

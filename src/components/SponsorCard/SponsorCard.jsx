@@ -1,8 +1,5 @@
-// import React from "react";
 import "./SponsorCard.css";
 import React, { useState, useEffect } from "react";
-// import "./Card.css";
-// import { cards } from "../../utils/sponsorslist";
 import Modal from "../Modal/Modal";
 import SponsorModal from "../Modal/SponsorModal";
 import Axios from "axios";
@@ -73,7 +70,6 @@ function SponsorCard() {
               key={listEvent?._id}
               className="sp-card"
               onClick={() => {
-                toggleModal();
                 setEventTitle(listEvent.eventTitle);
                 setEventDesc(listEvent.eventDesc);
                 setEventImage(listEvent.eventImage);
@@ -86,39 +82,30 @@ function SponsorCard() {
               }}
               style={{ marginBottom: "3rem" }}
             >
-              <img
-                src={listEvent.eventImage}
-                alt="image"
-                className="card-image"
-              />
-              <p className="card-title">{listEvent.eventTitle}</p>
-              <p className="card-desc">
-                {listEvent.eventDesc.length > 50
-                  ? `${listEvent.eventDesc.substring(0, 100)}...`
-                  : listEvent.eventDesc}
-              </p>
+               <img
+            src={listEvent.eventImage}
+            alt="image"
+            className="card-image"
+          />
               <div className="card-content">
+                <p className="card-title">{listEvent.eventTitle}</p>
                 <p className="card-desc">
+                  {listEvent.eventDesc.length > 50
+                    ? `${listEvent.eventDesc.substring(0, 100)}...`
+                    : listEvent.eventDesc}
+                </p>
+                {/* <p className="card-desc">
                   {listEvent.sponsorshipPackage.length > 80
                     ? `${listEvent.sponsorshipPackage.substring(0, 80)}...`
                     : listEvent.sponsorshipPackage}
-                </p>
-                <br />
+                </p> */}
+                <button
+                  className="btn-primary read-more-btn"
+                  onClick={()=> toggleModal()}
+                >
+                  Read More
+                </button>
               </div>
-              <button
-                onClick={() => toggleModal()}
-                style={{
-                  color: "white",
-                  paddingTop: "0.5rem",
-                  paddingBottom: "0.5rem",
-                  fontSize: "15px",
-                  borderRadius: "15px",
-                  backgroundColor: "#0F255F",
-                  width: "30%",
-                }}
-              >
-                See more
-              </button>
             </div>
           ))}
         </div>

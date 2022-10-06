@@ -17,12 +17,16 @@ const ForgotPassword = () => {
         setConfirmation("A password reset link has been sent to your email.");
         setIsLoading(false);
       })
-      .catch((err) => {
-        setError(err?.message);
+      .catch((error) => {
+        if(error.message.includes("Network Error")){
+          setError(
+            "Network Error. Check your internet connection and try again"
+          )
+        }
         setTimeout(() => {
           setError(null);
         }, 10000);
-        console.error(err);
+        console.error(error);
         setIsLoading(false);
       });
   };

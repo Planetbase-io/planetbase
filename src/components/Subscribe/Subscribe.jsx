@@ -6,18 +6,16 @@ function Subscribe() {
   return (
     <section className="subscribe">
       <div className="subscribe-details">
-        <div className="subscribe-header">
-          <img src={PBlogo} alt="planetbase logo" />
-        </div>
+        <img src={PBlogo} alt="planetbase logo" className="subscribe-img" />
         <h4>
-          Moving your events online really opens up the esteem of supporting it
+          Moving your events online really opens up the esteem of supporting it.
         </h4>
         <p>Become a subscriber and become the first to receive Information.</p>
       </div>
       <div>
-        <div className="parent-wrapper">
+        <div class="parent-wrapper">
           <span></span>
-          <div className="subscribe-wrapper">
+          <div class="subscribe-wrapper">
             <h4>SUBSCRIBE TO OUR NEWSLETTER</h4>
             <input
               type="email"
@@ -25,7 +23,7 @@ function Subscribe() {
               className="subscribe-input"
               placeholder="Enter Your Email Address"
             />
-            <div className="submit-btn">SUBMIT</div>
+            <button className="subscribe-btn">SUBMIT</button>
           </div>
         </div>
 

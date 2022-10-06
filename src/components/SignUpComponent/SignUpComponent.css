@@ -1,74 +1,67 @@
-
 .sign-up {
-      margin: 0;
+  margin: 0;
 }
 
 .sign-up > h1 {
-    text-align: center;
-    font-size: 30px;
-    margin-top: 30px;
-    font-weight: 500;
+  text-align: center;
+  font-size: 30px;
+  margin: 40px auto 0px auto;
+  font-weight: 500;
 }
 
-
 .signup-header {
-    text-align: center;
-    font-size: 16px;
-    font-weight: 500;
-    margin:10px;
-    color: #000000;
-    margin: 25px;
+  text-align: center;
+  font-weight: 500;
+  color: #000000;
+  margin: 10px 0;
+  line-height: 150%;
 }
 
 .signup-message {
-    color: #0F255F;
-    text-decoration: none;
+  color: #0f255f;
+  text-decoration: none;
 }
 
 .signup-message:hover {
-    color: #0b4e56;
-    text-decoration: none;
-    transition: 0.3s ease-in;
+  color: #0b4e56;
+  text-decoration: none;
+  transition: 0.3s ease-in;
 }
-
-
 
 .sign-up-section {
-    display: flex;
-    width: 20%;
-    align-items: center;
-    justify-content: space-between;
-    text-align: center;
-    margin: 0 auto;
+  display: flex;
+  width: 20%;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  margin: 0 auto;
 }
 
-.sign-up-link >a > p{
-    position: relative;
-    top: -5px;
-    font-size: 12px;
+.sign-up-link > a > p {
+  position: relative;
+  top: -5px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #000000;
+}
+
+@media screen and (max-width: 900px) {
+  .sign-up-section {
+    width: 37%;
+  }
+
+  .signup-header {
+    font-size: 15px;
     font-weight: 400;
-    color: #000000;
+  }
+
+  .input-container > input {
+    font-size: 13px;
+  }
 }
 
-
-@media screen and (max-width:900px) {
-    .sign-up-section {
-        width: 37%;
-    }
-
-    .signup-header {
-        font-size: 15px;
-        font-weight: 400;
-      }
-
-      .input-container > input {
-        font-size: 13px;
-      }
-}
-
-@media screen and (max-width:500px) {
-    .sign-up-section {
-        width: 50%;
-    }
-
+@media screen and (max-width: 500px) {
+  .sign-up-section {
+    width: 50%;
+  }
 }
