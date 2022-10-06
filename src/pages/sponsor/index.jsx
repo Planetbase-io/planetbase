@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { FiSearch } from "react-icons/fi";
 import SponsorCard from "../../components/SponsorCard/SponsorCard";
 import "./style.css";
 import Navbar from "../../components/NavBar/Navbar";
@@ -26,27 +25,6 @@ function Sponsor({ cards, index }) {
       <Navbar />
       <div className="sponsors">
         <h2>Discover Events Where Your Target Audience Is</h2>
-        {/* <div className="search-events sponsorship-search">
-          <span>
-            <FiSearch />
-          </span>
-          <input
-            type="text"
-            placeholder="Search for listed events"
-            // value={query}
-            // onChange={(e) => {
-            //   searchItems(e.target.value);
-            // }}
-          />
-        </div> */}
-        {/* <div>
-          <Link to="/sponsored-events">
-            <button className="btn-primary">
-              <span>Listed Events</span>
-            </button>
-          </Link>
-        </div> */}
-        <br />
         {events.length > 0 ? (
           <div>
             {events.map((events, index) => (
@@ -56,12 +34,6 @@ function Sponsor({ cards, index }) {
         ) : (
           <SponsorCard />
         )}
-
-        {/* <div className="sponsor-btn-continue">
-          <button className="btn-primary" type="submit">
-            <span>Continue</span>
-          </button>
-        </div> */}
       </div>
     </>
   );

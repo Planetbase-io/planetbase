@@ -42,7 +42,7 @@
   color: #0f6cc9;
   font-weight: 800;
   font-style: normal;
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
 }
 
 .hero-btn {
@@ -53,7 +53,7 @@
 }
 
 .hero-btn > a {
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
   padding: 15px 28px;
   color: rgb(7, 48, 62);
   cursor: pointer;
@@ -65,6 +65,11 @@
 .hero-btn > a:last-of-type:hover {
   color: #fff;
   background: #0f6cc9c4;
+}
+
+.hero-btn > a:hover {
+  color: rgb(7, 48, 62);
+  background-color: rgba(255, 255, 255, 0.85);
 }
 
 .hero-btn > a:last-of-type {
@@ -93,6 +98,7 @@
 
   .hero-btn > a {
     font-size: 17px;
+    padding: 16px 24px;
   }
 }
 
