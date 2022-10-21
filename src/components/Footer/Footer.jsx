@@ -24,7 +24,7 @@ function Footer() {
       </div>
       <div>
         <h3>Company</h3>
-        <p>About us</p>
+        <p><Link to="/about">About us</Link></p>
         <p>Our Mission</p>
         <p>Why Planetbase</p>
         <p>Careers</p>
