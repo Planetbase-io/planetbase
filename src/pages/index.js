@@ -16,4 +16,5 @@ export {default as Resources} from './resources/index'
 export {default as Company} from './company/index';
 export {default as WhyPlanetbase} from './whyPlanetbase/index'
 export {default as Faqs} from './faqs/index';
-export {default as About} from './about/index'
+export {default as About} from './about/index';
+export {default as ContactUs} from './contact/index'

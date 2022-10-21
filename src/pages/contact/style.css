@@ -1,0 +1,55 @@
+.contact-section {
+  width: 100%;
+}
+
+.contact-section > main {
+  padding: 3rem 5rem;
+  background: #edeef1;
+  height: 70vh;
+}
+
+.contact-section > main > h1 {
+  font-weight: 500;
+  font-size: 80px;
+  line-height: 120px;
+  color: #000000;
+  text-align: center;
+}
+
+.contact-helper {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+  margin: 20px auto;
+}
+
+@media screen and (max-width: 900px) {
+  .contact-section > main > h1 {
+    font-size: 40px;
+  }
+
+  .contact-helper {
+    width: 70%;
+    margin: 10px auto;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .contact-section > main {
+    height: 50vh;
+  }
+
+  .contact-section > main > h1 {
+    font-size: 25px;
+  }
+
+  .contact-helper {
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+  }
+
+  .contact-helper > div {
+    margin-bottom: 30px;
+  }
+}
