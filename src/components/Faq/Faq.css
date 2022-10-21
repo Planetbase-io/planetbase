@@ -184,6 +184,10 @@
 }
 
 @media screen and (max-width: 967px) {
+  .faq-section > main {
+    padding: 0rem;
+  }
+
   .accordion {
     padding: 28px;
     width: 80%;
