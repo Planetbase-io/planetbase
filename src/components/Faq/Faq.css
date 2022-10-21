@@ -1,0 +1,198 @@
+.accordion {
+  background: #fff;
+  border-radius: 5px;
+  color: #000000;
+  padding: 48px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* accordion style */
+.faqs {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.faq-section {
+  padding: 19px 26px;
+}
+
+.faq-section > h1 {
+  font-weight: 600;
+  font-size: 60px;
+  line-height: 90px;
+  color: #000000;
+  text-align: center;
+}
+
+.faq-section > h5 {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: #000000;
+  text-align: center;
+}
+
+.faq-section > main {
+  padding: 2rem;
+}
+
+.accordion > h4 {
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 45px;
+  color: #000000;
+}
+
+.faqQuestion,
+.faqQuestions {
+  position: relative;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 33px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background: #F6F6F6;
+  padding: 20px;
+  
+}
+
+.faqs > .faq > .faqQuestion > .faqQuestionImg,
+.faqs > .faq > .faqQuestions > .faqQuestionImg {
+  width: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 25px;
+  transition: all 0.5s ease;
+}
+
+.faqs > .faq > .faqQuestions > .faqQuestionImg {
+  filter: invert(1) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(0)
+    contrast(97%);
+}
+
+.faqAnswer {
+  opacity: 0;
+  max-height: 0;
+  overflow-y: hidden;
+  transition: all 0.5s ease;
+  font-size: 16px;
+}
+
+.faq {
+  margin: 15px 0;
+  padding: 5px 0;
+}
+
+.faqs > .faq.open > .faqQuestion,
+.faqs > .faq.open > .faqQuestions {
+  margin-bottom: 15px;
+}
+
+.faqs > .faq.open > .faqQuestion > .faqQuestionImg,
+.faqs > .faq.open > .faqQuestions > .faqQuestionImg {
+  transform: rotate(180deg);
+}
+
+.faqs > .faq > .faqAnswer {
+  font-size: 16px;
+  line-height: 24px;
+  width: 90%;
+}
+
+.faqs > .faq.open > .faqAnswer {
+  max-height: 1000px;
+  opacity: 1;
+}
+
+@media screen and (max-width: 967px) {
+  .faq {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 778px) {
+  .faqQuestion,
+  .faqQuestions {
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  .faqs > .faq > .faqAnswer,
+  .faqs > .faq.open > .faqAnswer {
+    font-size: 12px;
+  }
+
+  .menuBtn {
+    display: flex;
+    cursor: default;
+  }
+
+  .list__items {
+    right: -200%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    z-index: 900;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+    background: white;
+  }
+
+  /* this is for the hamurger menu when it is active */
+  .list__items.active {
+    right: 0;
+    position: fixed;
+    height: 100vh;
+  }
+
+  .list__items > a {
+    font-size: 4vw;
+    margin: 40px 0px;
+    opacity: 0.2;
+  }
+
+  .list__items.active > a {
+    font-size: 4vw;
+    margin: 40px 0px;
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 468px) {
+  .faqQuestion,
+  .faqQuestions {
+    cursor: default;
+  }
+
+  .faqQuestion > p,
+  .faqQuestions > p {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 967px) {
+  .accordion {
+    padding: 28px;
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .accordion {
+    padding: 20px 15px 10px;
+    width: 95%;
+  }
+}

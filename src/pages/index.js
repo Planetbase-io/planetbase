@@ -13,4 +13,7 @@ export { default as EventProfile } from './dashboard/index';
 export { default as EditEvent } from './dashboard/edit';
 export { default as ConfirmEvent } from './dashboard/confirm-events/index';
 export {default as Resources} from './resources/index'
-export {default as Company} from './company/index'
+export {default as Company} from './company/index';
+export {default as WhyPlanetbase} from './whyPlanetbase/index'
+export {default as Faqs} from './faqs/index';
+export {default as About} from './about/index'

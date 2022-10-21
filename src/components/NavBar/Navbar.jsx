@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "./Navbar.css";
+// import "./Navbar.css";
 import PBlogo from "../../assets/planetbase.png";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { IoMdArrowDropdown } from "react-icons/io";
 
 function Navbar() {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
@@ -60,6 +61,20 @@ function Navbar() {
                   Company
                 </Link>
               </li>
+              <li>
+                <Link to="/why-planetbase" 
+                  activeclassname="active"
+                  className="nav-links">
+                  Why Planetbase?
+                </Link>
+              </li>
+              <li>
+                <Link to="/faqs" 
+                  activeclassname="active"
+                  className="nav-links">
+                  FAQS <IoMdArrowDropdown />
+                </Link>
+              </li>
               <li className="nav-item">
                 {user ? (
                   <button className="btn-primary" onClick={onLogout}>
@@ -84,7 +99,19 @@ function Navbar() {
               <img src={PBlogo} alt="planetbase" />
             </Link>
             <ul className={isNavExpanded ? "nav-menu active" : "nav-menu"}>
-              <li style={{ marginTop: "16px" }}>
+              <li>
+                <Link to="/why-planetbase" activeclassname="active" 
+                  className="nav-links">
+                  Why Planetbase?
+                </Link>
+              </li>
+              <li>
+                <Link to="/faqs" activeclassname="active" 
+                  className="nav-links">
+                  FAQS <IoMdArrowDropdown />
+                </Link>
+              </li>
+              <li>
                 {user ? (
                   <button className="btn-primary" onClick={onLogout}>
                     Logout

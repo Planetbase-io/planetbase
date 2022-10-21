@@ -17,6 +17,9 @@ import {
   Payment,
   Resources,
   Company,
+  WhyPlanetbase,
+  Faqs,
+  About,
 } from "./pages/index";
 import SuccessPage from "./pages/sponsor/sponsor-bid/SuccessPage";
 import ReactGA from "react-ga";
@@ -48,6 +51,9 @@ function App() {
           <Route exact path="/company" element={<Company />} />
           <Route exact path="/success" element={<SuccessPage />} />
           <Route exact path="/forgotpassword" element={<ForgotPassword />} />
+          <Route exact path="/why-planetbase" element={<WhyPlanetbase />} />
+          <Route exact path="/faqs" element={<Faqs />} />
+          <Route exact path="/about" element={<About />} />
           <Route
             exact
             path="/resetpassword/:resetToken"

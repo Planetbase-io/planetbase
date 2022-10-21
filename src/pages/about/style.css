@@ -1,0 +1,112 @@
+.about-section {
+  width: 100%;
+}
+
+.about-section > main {
+  padding: 3rem 5rem;
+  background: #edeef1;
+}
+
+.about-section > main > h2 {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 70px;
+  color: #000000;
+}
+
+.about-section > main > h4 {
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 57px;
+  color: #000000;
+  margin-top: 30px;
+}
+
+.about-section > article {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 5rem 5rem;
+}
+
+.about-section > article > div {
+  width: 50%;
+  position: relative;
+}
+
+.about-section > article > div > h2 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 76px;
+}
+
+.about-section > article > p {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 52px;
+  color: #000000;
+  width: 50%;
+}
+
+@media screen and (max-width: 900px) {
+  .about-section > main {
+    padding: 1rem 2rem;
+  }
+
+  .about-section > main > h4 {
+    font-size: 20px;
+  }
+
+  .about-section > main > h2 {
+    font-size: 40px;
+  }
+
+  .about-section > article  {
+    padding: 1rem 2rem;
+  }
+
+  .about-section > article > div > h2 {
+    font-size: 20px;
+  }
+
+  .about-section > article > p {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .about-section > main > h2 {
+    font-size: 25px;
+  }
+
+  .whyPlanetbase > main {
+    padding: 0 1.4rem;
+    margin-bottom: 30px;
+  }
+
+  .about-section > article {
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem 2rem;
+  }
+
+  .about-section > article > div {
+    width: 100%;
+    padding: 3rem;
+  }
+
+  .about-section > article > div > h2 {
+    font-size: 30px;
+  }
+
+  .about-section > article > p {
+    width: 100%;
+  }
+}
