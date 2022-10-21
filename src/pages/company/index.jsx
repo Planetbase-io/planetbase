@@ -5,10 +5,11 @@ import Subscribe from '../../components/Subscribe/Subscribe';
 import ModalVideo from '../../components/Video/Video';
 
 function Company() {
+
   return (
     <div>
       <CompanyComponent>
-      <ModalVideo />
+      {/* <ModalVideo /> */}
       <Subscribe />
       <Footer />
       </CompanyComponent>

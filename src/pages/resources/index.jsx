@@ -8,7 +8,7 @@ function Resources() {
   return (
     <div>
         <ResourcesComponent>
-        <ModalVideo />
+        {/* <ModalVideo /> */}
         <Subscribe/>
         <Footer/>
         </ResourcesComponent>

@@ -1,0 +1,63 @@
+.whyPlanetbase {
+  padding: 19px 26px;
+}
+
+.whyPlanetbase > h1 {
+  text-align: center;
+  font-weight: 600;
+  font-size: 60px;
+  line-height: 90px;
+  color: #000000;
+}
+
+.whyPlanetbase > main {
+  padding: 2rem;
+}
+
+.whyPlanetbase > main > h4 {
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 45px;
+  color: #0f369d;
+  margin: 0 0 1rem 0;
+}
+
+.whyPlanetbase > main > ol {
+  list-style-type: disc;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 36px;
+}
+
+@media screen and (max-width: 768px) {
+  .whyPlanetbase > h1 {
+    font-size: 40px;
+  }
+
+  .whyPlanetbase > main > h4 {
+    margin: 0 0 0.6rem 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .whyPlanetbase {
+    padding: 10px 6px;
+  }
+
+  .whyPlanetbase > h1 {
+    font-size: 30px;
+  }
+
+  .whyPlanetbase > main {
+    padding: 0 1.4rem;
+    margin-bottom: 30px;
+  }
+
+  .whyPlanetbase > main > h4 {
+    margin: 0 0 0.6rem 0;
+    font-size: 20px;
+  }
+  .whyPlanetbase > main > ol {
+    font-size: 15px;
+  }
+}
