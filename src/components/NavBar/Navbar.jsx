@@ -100,12 +100,14 @@ function Navbar() {
             </Link>
             <ul className={isNavExpanded ? "nav-menu active" : "nav-menu"}>
               <li>
-                <Link to="/why-planetbase" activeclassname="active">
+                <Link to="/why-planetbase" activeclassname="active" 
+                  className="nav-links">
                   Why Planetbase?
                 </Link>
               </li>
               <li>
-                <Link to="/faqs" activeclassname="active">
+                <Link to="/faqs" activeclassname="active" 
+                  className="nav-links">
                   FAQS <IoMdArrowDropdown />
                 </Link>
               </li>
