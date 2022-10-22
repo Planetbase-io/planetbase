@@ -151,7 +151,6 @@
     background: white;
   }
 
-  /* this is for the hamurger menu when it is active */
   .list__items.active {
     right: 0;
     position: fixed;
@@ -172,6 +171,11 @@
 }
 
 @media screen and (max-width: 468px) {
+  .faq-section > h5 {
+    font-size: 15px;
+  }
+
+  
   .faqQuestion,
   .faqQuestions {
     cursor: default;
@@ -184,6 +188,10 @@
 }
 
 @media screen and (max-width: 967px) {
+  .faq-section > main {
+    padding: 0rem;
+  }
+
   .accordion {
     padding: 28px;
     width: 80%;

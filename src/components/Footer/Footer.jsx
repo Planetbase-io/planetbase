@@ -8,38 +8,24 @@ function Footer() {
   return (
     <div className="footer">
       <div>
-        <h3>Get Started with Planetbase</h3>
-        <p>Pricing</p>
-        <p>Contact us</p>
-        {token ? (
-          ""
-        ) : (
-          <>
-            <p><Link to="/signup">Sign Up</Link></p>
-            <p>
-              <Link to="/login">Log in</Link>
-            </p>
-          </>
-        )}
+        <h3>Why Planetbase</h3>
+        <p>For Event Organizers</p>
+        <p>For Corporate Sponsors</p>
       </div>
       <div>
         <h3>Company</h3>
         <p><Link to="/about">About us</Link></p>
-        <p>Our Mission</p>
-        <p>Why Planetbase</p>
-        <p>Careers</p>
+        <p><Link to="/faqs">FAQS</Link></p>
       </div>
       <div>
-        <h3>Resources</h3>
+        <h3>Help Center</h3>
         <p>
-          <Link to="/support">Support</Link>
+          <Link to="/contact-us">Contact Us</Link>
         </p>
-        <p>Case studies</p>
-        <p>Blog</p>
-        <p>What's New</p>
+        <p>Live Chat</p>
       </div>
       <div>
-        <h3>Follows</h3>
+        <h3>Follow us</h3>
         <p>Facebook</p>
         <p>LinkedIn</p>
         <p>Twitter</p>
