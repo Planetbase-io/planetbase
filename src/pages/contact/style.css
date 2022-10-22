@@ -36,7 +36,7 @@
 
 @media screen and (max-width: 500px) {
   .contact-section > main {
-    height: 50vh;
+    height: 80vh;
   }
 
   .contact-section > main > h1 {
