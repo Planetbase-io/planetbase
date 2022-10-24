@@ -7,9 +7,9 @@ function Subscribe() {
     <section className="subscribe">
       <div className="subscribe-details">
         <img src={PBlogo} alt="planetbase logo" className="subscribe-img" />
-        <h4>
-          Moving your events online really opens up the esteem of supporting it.
-        </h4>
+        //<h4>
+          //Moving your events online really opens up the esteem of supporting it.
+        //</h4>
         <p>Become a subscriber and become the first to receive Information.</p>
       </div>
       <div>
