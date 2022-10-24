@@ -24,12 +24,6 @@ function Footer() {
         </p>
         <p>Live Chat</p>
       </div>
-      <div>
-        <h3>Follow us</h3>
-        <p>Facebook</p>
-        <p>LinkedIn</p>
-        <p>Twitter</p>
-      </div>
     </div>
   );
 }
