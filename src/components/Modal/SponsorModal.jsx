@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./Modal.css";
 
 function SponsorModal({
@@ -11,9 +11,14 @@ function SponsorModal({
   sponsorshipPackage,
   price,
 }) {
-  console.log(eventTitle);
-
   const token = localStorage.getItem("token");
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!token) {
+      navigate("/login");
+    }
+  }, []);
+  console.log(eventTitle);
 
   return (
     <div>
