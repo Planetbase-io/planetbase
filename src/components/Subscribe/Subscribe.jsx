@@ -7,7 +7,9 @@ function Subscribe() {
     <section className="subscribe">
       <div className="subscribe-details">
         <img src={PBlogo} alt="planetbase logo" className="subscribe-img" />
-        <p style={{fontSize: "30px"}}>Become a subscriber and become the first to receive Information.</p>
+        <p style={{ fontSize: "2rem", lineHeight: 1.4 }}>
+          Become a subscriber and become the first to receive Information.
+        </p>
       </div>
       <div>
         <div className="parent-wrapper">
