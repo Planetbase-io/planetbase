@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import EventLayout from "../../layouts/events-layout";
 import { useNavigate } from "react-router-dom";
 import Axios from "axios";
-import { useForm } from "react-hook-form";
 
 function EditEvent() {
   const [image, setImage] = useState("");
