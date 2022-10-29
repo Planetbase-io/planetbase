@@ -62,17 +62,17 @@ function Navbar() {
                 </Link>
               </li>
               <li>
-                <Link to="/why-planetbase" 
+                <Link
+                  to="/why-planetbase"
                   activeclassname="active"
-                  className="nav-links">
+                  className="nav-links"
+                >
                   Why Planetbase?
                 </Link>
               </li>
               <li>
-                <Link to="/faqs" 
-                  activeclassname="active"
-                  className="nav-links">
-                  FAQS <IoMdArrowDropdown />
+                <Link to="/faqs" activeclassname="active" className="nav-links">
+                  FAQS
                 </Link>
               </li>
               <li className="nav-item">
@@ -100,15 +100,17 @@ function Navbar() {
             </Link>
             <ul className={isNavExpanded ? "nav-menu active" : "nav-menu"}>
               <li>
-                <Link to="/why-planetbase" activeclassname="active" 
-                  className="nav-links">
+                <Link
+                  to="/why-planetbase"
+                  activeclassname="active"
+                  className="nav-links"
+                >
                   Why Planetbase?
                 </Link>
               </li>
               <li>
-                <Link to="/faqs" activeclassname="active" 
-                  className="nav-links">
-                  FAQS <IoMdArrowDropdown />
+                <Link to="/faqs" activeclassname="active" className="nav-links">
+                  FAQS
                 </Link>
               </li>
               <li>
