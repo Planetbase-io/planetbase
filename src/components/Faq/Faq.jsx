@@ -1,5 +1,5 @@
 import React from "react";
-import { IoMdArrowDropup } from "react-icons/io";
+import { IoMdArrowDropdown } from "react-icons/io";
 
 const FAQ = ({ faq, index, toggleFAQ }) => {
   return (
@@ -12,7 +12,7 @@ const FAQ = ({ faq, index, toggleFAQ }) => {
         <p>{faq.question}</p>
 
         <div className="faqQuestionImg">
-          <IoMdArrowDropup />
+          <IoMdArrowDropdown />
         </div>
       </div>
       <div className="faqAnswer">{faq.answer}</div>
