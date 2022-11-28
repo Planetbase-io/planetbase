@@ -94,11 +94,6 @@ function SponsorCard() {
                     ? `${listEvent.eventDesc.substring(0, 100)}...`
                     : listEvent.eventDesc}
                 </p>
-                {/* <p className="card-desc">
-                  {listEvent.sponsorshipPackage.length > 80
-                    ? `${listEvent.sponsorshipPackage.substring(0, 80)}...`
-                    : listEvent.sponsorshipPackage}
-                </p> */}
                 <button
                   className="btn-primary read-more-btn"
                   onClick={()=> toggleModal()}
