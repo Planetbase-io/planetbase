@@ -11,8 +11,10 @@ function EditEvent() {
     if (!token) {
       navigate("/login");
     }
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
+  //File converter to base64
   function convert2base64(e) {
     const file = e.target.files[0];
     const reader = new FileReader();
