@@ -8,7 +8,7 @@ export const data = [
     },
     {
         question: "What’s in it for Planetbase?",
-        answer: "We strive to have your food delivered within a period of 30 minutes. On some occasions, delivery may be delayed due to circumstances beyond our control. On occasions like this, we try our best to communicate it across to the customer.",
+        answer: "",
         open: false
     },
     
